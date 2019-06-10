@@ -14,7 +14,6 @@ def autenticar_usuario():
     if formulario.validate_on_submit():
         render_template('index.html')
 
-
     return render_template('login.html', titulo="Autenticar",form=formulario)
 
 @app.route('/')

@@ -5,6 +5,24 @@
 
     <form action="{{ url_for('autenticar_usuario') }}" method="POST">
 
+        {{ form.hidden_tag() }}
+        <P>{{ form.username.label }}<BR>
+        {{ form.username(size=20) }}
+        {% for erro in form.username.errors %}
+            <span style="color: red">
+            {{ erro }}
+            </span>
+        {% endfor %}
+
+        <P>{{ form.password.label }}<BR>
+        {{ form.password(size=20) }}
+        {% for erro in form.password.errors %}
+            <span style="color: red">
+            {{ erro }}
+            </span>
+        {% endfor %}
+
+        <P>{{ form.submit }}<BR>
 
     </form>
 {% endblock %}
